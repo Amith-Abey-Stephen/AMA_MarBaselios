@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette from green to rose/pink theme for Mar Baselios School */
+  --background: #ffffff; /* Clean white background */
+  --foreground: #475569; /* Dark slate gray primary text */
+  --card: #fdf2f8; /* Light pink card background */
+  --card-foreground: #475569; /* Dark slate gray text in cards */
+  --popover: #ffffff; /* White popover background */
+  --popover-foreground: #475569; /* Dark slate gray popover text */
+  --primary: #be123c; /* Rose-600 primary color */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #ec4899; /* Bright pink secondary */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #fdf2f8; /* Light pink muted background */
+  --muted-foreground: #475569; /* Dark slate gray muted text */
+  --accent: #ec4899; /* Bright pink accent color */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #dc2626; /* Red destructive */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e2e8f0; /* Light slate border */
+  --input: #f1f5f9; /* Light gray input background */
+  --ring: #ec4899; /* Bright pink focus ring */
+  --chart-1: #be123c; /* Rose chart color */
+  --chart-2: #ec4899; /* Pink chart color */
+  --chart-3: #f59e0b; /* Orange chart color */
+  --chart-4: #1f2937; /* Dark gray chart color */
+  --chart-5: #dc2626; /* Red chart color */
+  --radius: 0.5rem; /* Rounded corners */
+  --sidebar: #fdf2f8; /* Light pink sidebar */
+  --sidebar-foreground: #475569; /* Dark slate gray sidebar text */
+  --sidebar-primary: #be123c; /* Rose sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White text on sidebar primary */
+  --sidebar-accent: #ec4899; /* Pink sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White text on sidebar accent */
+  --sidebar-border: #e2e8f0; /* Light slate sidebar border */
+  --sidebar-ring: #ec4899; /* Pink sidebar focus ring */
+}
+
+.dark {
+  /* Dark mode colors updated to complement rose theme */
+  --background: #0f172a; /* Dark slate background */
+  --foreground: #f1f5f9; /* Light slate text */
+  --card: #1e293b; /* Dark slate card background */
+  --card-foreground: #f1f5f9; /* Light slate card text */
+  --popover: #1e293b; /* Dark slate popover */
+  --popover-foreground: #f1f5f9; /* Light slate popover text */
+  --primary: #f43f5e; /* Bright rose primary */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #f472b6; /* Bright pink secondary */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #1e293b; /* Dark slate muted */
+  --muted-foreground: #94a3b8; /* Medium slate muted text */
+  --accent: #f472b6; /* Bright pink accent */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #ef4444; /* Bright red destructive */
+  --destructive-foreground: #f1f5f9; /* Light slate destructive text */
+  --border: #334155; /* Medium slate border */
+  --input: #1e293b; /* Dark slate input */
+  --ring: #f472b6; /* Bright pink focus ring */
+  --chart-1: #f43f5e; /* Bright rose chart */
+  --chart-2: #f472b6; /* Bright pink chart */
+  --chart-3: #f59e0b; /* Orange chart */
+  --chart-4: #94a3b8; /* Medium slate chart */
+  --chart-5: #ef4444; /* Bright red chart */
+  --sidebar: #1e293b; /* Dark slate sidebar */
+  --sidebar-foreground: #f1f5f9; /* Light slate sidebar text */
+  --sidebar-primary: #f43f5e; /* Bright rose sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White text on sidebar primary */
+  --sidebar-accent: #f472b6; /* Bright pink sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White text on sidebar accent */
+  --sidebar-border: #334155; /* Medium slate sidebar border */
+  --sidebar-ring: #f472b6; /* Bright pink sidebar focus ring */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
